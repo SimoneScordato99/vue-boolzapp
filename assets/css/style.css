@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.padre{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #009688 25%, #DBDBD3 25%, #DBDBD3 25%, #DBDBD3 25%);
+}
+.figlio{
+    width: 80%;
+    height: 90%;
+    background-color: white;
+    display: flex;
+}
+.profili{
+    width: 40%;
+    height: 100%;
+    background-color: yellow;
+}
+.chat{
+    width: 60%;
+    height: 100%;
+    background-color: rgb(0, 255, 0);
+}
+.profilo,
+.profilo-chat{
+    height: 60px;
+    width: 100%;
+    background-color: white;
+    border: 1px solid lightgray;
+    display: flex;
+    justify-content: space-between;
+}
+.dati-profilo,
+.pulsanti-profilo{
+    display: flex;
+    align-items: center;
+}
+.dati-profilo img,
+.chat-list-card img{
+    height: 80%;
+    border: 1px solid lightgray;
+    border-radius: 50%; 
+}
+.notifiche{
+    height: 60px;
+    width: 100%;
+    background-color: #8EDAFC;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+}
+.campana{
+    background-color: white;
+    height: 40px;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+}
+.notifiche-scritte{
+    display: flex;
+    flex-direction: column;
+    padding-left: 5px;
+}
+.notifiche-scritte .notifica-titolo{
+    font-size: 14px;
+    font-weight: bold;
+}
+.notifiche-scritte .notifica-sott{
+    font-size: 10px;
+    
+}
+.search{
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: lightgray;
+}
+.search button,
+.search input {
+    border: 1px solid lightgray;
+}
+.search button{
+    padding: 0px 10px;
+    margin-left: 10px;
+}
+.search input{
+    width: 100%;
+    margin-right: 10px;
+}
+.chat-list{
+    width: 100%;
+    height: calc(100% - 160px);
+    overflow-y: scroll;
+}
+.chat-list-card{
+    height: 60px;
+    width: 100%;
+    background-color: white;
+    border: 1px solid lightgray;
+}
+.chat-list-card img{
+    
+}

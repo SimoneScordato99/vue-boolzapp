@@ -12,10 +12,11 @@
     <div id="app">
       <div class="padre">
         <div class="figlio">
+          <!-- --------------------- -->
           <div class="profili">
             <div class="profilo">
               <div class="dati-profilo px-2">
-                <img  src="./assets/img/avatar_io.jpg" alt="proprio avatar">
+                <img  src="./assets/img/avatar_io.jpeg" alt="proprio avatar">
                 <span class="px-2">Simone</span>
               </div>
               <div class="pulsanti-profilo">
@@ -40,14 +41,45 @@
               <input type="text" name="cerca" id="cerca" placeholder="Cerca o inizia una nuova chat">
             </div>
             <div class="chat-list">
-              <div v-for="(elem, index) in contacts" key="index" class="chat-list-card">
-                  <img src="./assets${elem.avatar}" alt="">
+              <div v-for="(elem, index) in contacts" key="index" class="chat-list-card px-2 my-1">
+                  <img :src="elem.avatar" alt="">
+                  <div class="info">
+                    <span class="info-titolo">{{elem.name}}</span>
+                    <span class="info-info">Ultimo messaggio inviato</span>
+                  </div>
+                  
               </div>
               
             </div>
           </div>
+          <!-- --------------------- -->
           <div class="chat">
-            <div class="profilo-chat"></div>
+            <div class="profilo-chat">
+              <div class="dati-profilo px-2">
+                <img :src="contacts[0].avatar" alt="proprio avatar">
+                <div class="info px-2">
+                  <span class="info-titolo">{{contacts[0].name}}</span>
+                  <span class="info-info">Ultimo accesso ore 12:00</span>
+                </div>
+              </div>
+              <div class="pulsanti-profilo">
+                <i class="px-2 fa-solid fa-magnifying-glass" style="color: #b1b1b1;"></i>
+                <i class="px-2 fa-solid fa-paperclip" style="color: #b1b1b1;"></i>
+                <i class="px-2 fa-solid fa-ellipsis-vertical" style="color: #b1b1b1;"></i>
+              </div>
+            </div>
+            <div class="chat-testo"></div>
+            <div class="chat-invia">
+              <div class="emojy">
+                <i class="fa-regular fa-face-smile" style="color: #b1b1b1;"></i>
+              </div>
+              <div class="text">
+                <input type="text" name="" id="">
+              </div>
+              <div class="invia">
+                <i class="fa-solid fa-microphone" style="color: #b1b1b1;"></i>
+              </div>
+            </div>
           </div>
         </div>
       </div>

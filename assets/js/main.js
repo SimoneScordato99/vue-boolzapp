@@ -6,7 +6,7 @@ data() {
         contacts: [
             {
                 name: 'Michele',
-                avatar: '/img/avatar_1.png',
+                avatar: './assets/img/avatar_1.jpeg',
                 visible: true,
                 messages: [
                     {
@@ -28,7 +28,7 @@ data() {
             },
             {
                 name: 'Fabio',
-                avatar: '/img/avatar_2.png',
+                avatar: './assets/img/avatar_2.jpeg',
                 visible: true,
                 messages: [
                     {
@@ -50,7 +50,7 @@ data() {
             },
             {
                 name: 'Samuele',
-                avatar: '/img/avatar_3.png',
+                avatar: './assets/img/avatar_3.jpeg',
                 visible: true,
                 messages: [
                     {
@@ -72,7 +72,7 @@ data() {
             },
             {
                 name: 'Alessandro B.',
-                avatar: '/img/avatar_4.png',
+                avatar: './assets/img/avatar_4.jpeg',
                 visible: true,
                 messages: [
                     {
@@ -89,7 +89,7 @@ data() {
             },
             {
                 name: 'Alessandro L.',
-                avatar: '/img/avatar_5.png',
+                avatar: './assets/img/avatar_5.jpeg',
                 visible: true,
                 messages: [
                     {
@@ -106,7 +106,7 @@ data() {
             },
             {
                 name: 'Claudia',
-                avatar: '/img/avatar_5.png',
+                avatar: './assets/img/avatar_5.jpeg',
                 visible: true,
                 messages: [
                     {
@@ -128,7 +128,7 @@ data() {
             },
             {
                 name: 'Federico',
-                avatar: '/img/avatar_7.png',
+                avatar: './assets/img/avatar_7.jpeg',
                 visible: true,
                 messages: [
                     {
@@ -145,7 +145,7 @@ data() {
             },
             {
                 name: 'Davide',
-                avatar: '/img/avatar_8.png',
+                avatar: './assets/img/avatar_8.jpeg',
                 visible: true,
                 messages: [
                     {

@@ -120,6 +120,9 @@
 .chat-list-card:hover{
     background-color: rgb(212, 212, 212);
 }
+.hoverizzato{
+    background-color: rgb(212, 212, 212);
+}
 .chat-list-card img{
     height: 80%;
     aspect-ratio: 1;
@@ -141,6 +144,7 @@
     height: calc(100% - 120px);
     width: 100%;
     padding: 20px;
+    overflow-y: scroll;
     
 }
 .chat-invia{
@@ -158,6 +162,7 @@
 }
 .text{
     width: 80%;
+
 }
 .text input{
     width: 100%;
@@ -166,10 +171,11 @@
 }
 
 .messaggio{
-    height: 60px;
+    min-height: 60px;
     width: 100%;
     margin-bottom: 10px;
     display: flex;
+    align-items: center;
     position: relative;
 }
 .messaggio-sent{

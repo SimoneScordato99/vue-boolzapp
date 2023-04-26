@@ -166,9 +166,16 @@ data() {
                 ],
             }
         ],
+
         sent: 'messaggio-sent',
         recived: 'messaggio-recived',
-        soldato: 0
+        soldato: 0,
+
+        nuovoTesto:'',
+        
+        ricerca:''
+        
+        
         
 
     }
@@ -177,6 +184,15 @@ created(){
 
 },
 methods:{
-
+    aggiungiTesto(){
+        this.contacts[this.soldato].messages.push({message: this.nuovoTesto , status: 'sent'}),
+        this.nuovoTesto = ''
+    },
+    ricerca(){
+        this.ricerca = this.contacts.name.filter((nome) => nome.contain(this.contacts.name))
+        this.contacts.pop(this.ricerca)
+        
+    }
+ 
 }
 }).mount('#app')

@@ -140,6 +140,7 @@
 .chat-testo{
     height: calc(100% - 120px);
     width: 100%;
+    padding: 20px;
     
 }
 .chat-invia{
@@ -162,4 +163,34 @@
     width: 100%;
     border: 1px solid rgb(237, 237, 237);
     border-radius: 10px;
+}
+
+.messaggio{
+    height: 60px;
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    position: relative;
+}
+.messaggio-sent{
+    
+    max-width: 50%;  
+    background-color: #B9D8A1;
+    border-radius: 20px;
+    padding: 10px;
+    position: absolute;
+    left: 0;
+}
+.messaggio-recived{
+    
+    max-width: 50%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+}
+.data{
+    font-size: 9px;
+    text-align: end;
 }

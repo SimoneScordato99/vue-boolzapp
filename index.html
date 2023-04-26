@@ -12,7 +12,7 @@
     <div id="app">
       <div class="padre">
         <div class="figlio">
-          <!-- --------------------- -->
+          <!-- --------------------------------------------------------------- -->
           <div class="profili">
             <div class="profilo">
               <div class="dati-profilo px-2">
@@ -41,8 +41,8 @@
               <input type="text" name="cerca" id="cerca" placeholder="Cerca o inizia una nuova chat">
             </div>
             <div class="chat-list">
-              <div v-for="(elem, index) in contacts" key="index" class="chat-list-card px-2 my-1">
-                  <img :src="elem.avatar" alt="">
+              <div v-for="(elem, index) in contacts" key="index" class="chat-list-card px-2 my-1" :id="index" @click="soldato = index">
+                  <img :src="elem.avatar" :alt="elem.name">
                   <div class="info">
                     <span class="info-titolo">{{elem.name}}</span>
                     <span class="info-info">Ultimo messaggio inviato</span>
@@ -52,13 +52,13 @@
               
             </div>
           </div>
-          <!-- --------------------- -->
+          <!-- --------------------------------------------------------------- -->
           <div class="chat">
             <div class="profilo-chat">
               <div class="dati-profilo px-2">
-                <img :src="contacts[0].avatar" alt="proprio avatar">
+                <img :src="contacts[soldato].avatar" alt="proprio avatar">
                 <div class="info px-2">
-                  <span class="info-titolo">{{contacts[0].name}}</span>
+                  <span class="info-titolo">{{contacts[soldato].name}}</span>
                   <span class="info-info">Ultimo accesso ore 12:00</span>
                 </div>
               </div>
@@ -68,7 +68,20 @@
                 <i class="px-2 fa-solid fa-ellipsis-vertical" style="color: #b1b1b1;"></i>
               </div>
             </div>
-            <div class="chat-testo"></div>
+            <div class="chat-testo">
+              <div v-for="(element, index) in contacts[soldato].messages" key="index" class="messaggio">
+                <div  v-if="element.status === 'sent'" :class="sent">
+                  {{element.message}}
+                  <div class="data">{{element.date}}</div>
+                </div>
+                <div  v-else-if :class="recived">
+                  {{element.message}}
+                  <div class="data">{{element.date}}</div>
+                </div>
+                
+              </div>
+
+            </div>
             <div class="chat-invia">
               <div class="emojy">
                 <i class="fa-regular fa-face-smile" style="color: #b1b1b1;"></i>

@@ -165,7 +165,10 @@ data() {
                     }
                 ],
             }
-        ]
+        ],
+        sent: 'messaggio-sent',
+        recived: 'messaggio-recived',
+        soldato: 0
         
 
     }

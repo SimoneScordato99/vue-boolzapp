@@ -106,7 +106,7 @@ data() {
             },
             {
                 name: 'Claudia',
-                avatar: './assets/img/avatar_5.jpeg',
+                avatar: './assets/img/avatar_6.jpeg',
                 visible: true,
                 messages: [
                     {
@@ -173,24 +173,49 @@ data() {
 
         nuovoTesto:'',
         
-        ricerca:''
-        
-        
+        risultatoRicerca:'',
+
+        dataFinale: ''
         
 
     }
 },
 created(){
-
+    
 },
 methods:{
     aggiungiTesto(){
-        this.contacts[this.soldato].messages.push({message: this.nuovoTesto , status: 'sent'}),
+        this.contacts[this.soldato].messages.push({ date:this.dataFinale , message: this.nuovoTesto , status: 'sent'}),
         this.nuovoTesto = ''
+        this.dataFinale == this.getCurrentDateTime()
+        setTimeout(this.autoRisposta,1000)
+
     },
-    ricerca(){
-        this.ricerca = this.contacts.name.filter((nome) => nome.contain(this.contacts.name))
-        this.contacts.pop(this.ricerca)
+    autoRisposta(){
+        this.contacts[this.soldato].messages.push({ date:this.dataFinale , message: 'ok' , status: 'recived'}),
+        this.dataFinale == this.getCurrentDateTime()
+    },
+    getCurrentDateTime() {
+        const date = new Date();
+        const year = date.getFullYear();
+        const month = date.getMonth() + 1;
+        const day = date.getDate();
+        const hours = date.getHours();
+        const minutes = date.getMinutes();
+        const seconds = date.getSeconds();
+        this.dataFinale = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+    },
+    ricercando(){
+        this.contacts.forEach(element => {
+            this.risultatoRicerca == this.risultatoRicerca.toLowerCase()
+            if(element.name.toLowerCase().includes(this.risultatoRicerca)){
+                element.visible = true
+            }else{
+                element.visible = false
+            }           
+        });
+    },
+    eliminaTesto(){
         
     }
  

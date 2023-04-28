@@ -38,12 +38,12 @@
               <button>
                 <i class="fa-solid fa-magnifying-glass" style="color: #b1b1b1;"></i>
               </button>
-              <input type="text" name="cerca" id="cerca" placeholder="Cerca o inizia una nuova chat" v-model="ricerca">
+              <input type="text" name="cerca" id="cerca" placeholder="Cerca o inizia una nuova chat" v-model="risultatoRicerca" v-on:input="ricercando">
             </div>
             <div class="chat-list">
               <div  v-for="(elem, index) in contacts" key="index" 
                     class="chat-list-card px-2 my-1"
-                    
+                    :class=" (elem.visible != true)? 'd-none' : ''"
                     :class=" (soldato == index) ?  'hoverizzato' : ''" 
                     :id="index" @click="soldato = index">
                   <img :src="elem.avatar" :alt="elem.name">
@@ -76,6 +76,7 @@
               <div v-for="(element, index) in contacts[soldato].messages" key="index" class="messaggio">
                 <div  v-if="element.status === 'sent'" :class="sent">
                   {{element.message}}
+                  <i class="fa-solid fa-xmark" style="color: #b1b1b1;"></i>
                   <div class="data">{{element.date}}</div>
                 </div>
                 <div  v-else-if :class="recived">
@@ -91,7 +92,7 @@
                 <i class="fa-regular fa-face-smile" style="color: #b1b1b1;"></i>
               </div>
               <div class="text">
-                <input type="text" name="testo" id="testo" v-model="nuovoTesto" @keyup.enter="aggiungiTesto">
+                <input type="text" name="testo" id="testo" v-model="nuovoTesto" @keyup.enter="aggiungiTesto" v-on:input="getCurrentDateTime">
               </div>
               <div class="invia">
                 <i class="fa-solid fa-microphone" style="color: #b1b1b1;"></i>
